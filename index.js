@@ -21,7 +21,9 @@ server.use(
 
 server.use(express.urlencoded({ extended: true }));
 server.use(cookieParser());
-
+server.get("/", (req, resp) => {
+  resp.redirect("/menuinicial");
+});
 server.get("/menuinicial", (req, resp) => {
   let ultimoacesso = req.cookies?.ultimoacesso;
 
